@@ -13,8 +13,8 @@ function getPreparedMovies(movies, query) {
       const preparedQuery = query.trim().toLowerCase();
 
       return (
-        movie.title.contains(preparedQuery) ||
-        movie.description.contains(preparedQuery)
+        movie.title.toLowerCase().includes(preparedQuery) ||
+        movie.description.toLowerCase().includes(preparedQuery)
       );
     });
   }
