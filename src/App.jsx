@@ -6,10 +6,8 @@ import moviesFromServer from './api/movies.json';
 import { SearchBar } from './components/SearchBar/SearchBar';
 
 function getPreparedMovies(movies, query) {
-  const preparedMovies = [...movies];
-
   if (query) {
-    return preparedMovies.filter(movie => {
+    return movies.filter(movie => {
       const preparedQuery = query.trim().toLowerCase();
 
       return (
@@ -19,7 +17,7 @@ function getPreparedMovies(movies, query) {
     });
   }
 
-  return preparedMovies;
+  return movies;
 }
 
 export const App = () => {
